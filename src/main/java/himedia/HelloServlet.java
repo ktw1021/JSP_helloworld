@@ -1,0 +1,28 @@
+package himedia;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class HelloServlet extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// 사용자로부터 name 파라미터를 전달 받아서 출력
+		// 파라미터로 데이터가 전달되는 GET 방식의 요청을 처리하는 메서드
+		resp.setContentType("text/html; charset=UTF-8");
+		String name = req.getParameter("name");
+//		super.doGet(req, resp);
+		
+		if (name == null) {
+			name = "Anonymous";
+		}
+		PrintWriter out = resp.getWriter();
+		out.println("<h1> Hello Servlet </h1>");
+		out.println("<p> Welcome, " + name + "</p>");
+	}
+	
+}
