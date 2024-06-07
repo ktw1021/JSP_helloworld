@@ -33,12 +33,12 @@ if (name) {
 	}
 	%>
 	<h1> Hello, JSP </h1>
-	<p> Welcome <%= name %></p>
+	<p> Welcome <%= request.getParameter("name") %></p>
 	<p> 이것은 JSP로 만들어진 동적 페이지입니다. </p>
 
 	<h3> GET 전송 </h3>
-	<p><a href = "/HelloWorld/hello.jsp?name=홍길동"> GET hello.jsp 호출 </a></p>
-	<p><a href = "/HelloWorld/hs?name=홍길동">GET /hs -> HelloServlet 호출 </a></p>
+	<p><a href = "/HelloWorld/hello.jsp"> GET hello.jsp 호출 </a></p>
+	<p><a href = "/HelloWorld/hs">GET /hs -> HelloServlet 호출 </a></p>
 	
 </body>
 </html>
